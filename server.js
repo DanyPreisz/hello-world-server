@@ -1,12 +1,13 @@
 import http from "node:http";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { bumpVisits, getPage, listPages } from "./lib/db.js";
+import { bumpVisits, getPage, listPages, storageName } from "./lib/db.js";
 import { parseUrl, sendFile, sendJson, sendText } from "./lib/http.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PUBLIC_DIR = path.join(__dirname, "public");
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 8080;
+const HOST = process.env.HOST || "0.0.0.0";
 
 const PAGE_ROUTES = {
   "/": "home",
@@ -28,7 +29,11 @@ async function handleApi(req, res, url) {
   }
 
   if (url.pathname === "/api/health") {
-    sendJson(res, 200, { ok: true, uptime: process.uptime() });
+    sendJson(res, 200, {
+      ok: true,
+      uptime: process.uptime(),
+      storage: storageName()
+    });
     return;
   }
 
@@ -102,7 +107,8 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`Servidor vanilla en http://localhost:${PORT}`);
+server.listen(PORT, HOST, () => {
+  console.log(`Servidor vanilla en http://${HOST}:${PORT}`);
+  console.log(`Storage: ${storageName()}`);
   console.log("Rutas: /  /about  /api/pages  /api/health");
 });
