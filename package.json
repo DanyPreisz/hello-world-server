@@ -1,0 +1,31 @@
+{
+  "name": "hello-world-server",
+  "version": "1.0.0",
+  "description": "Servidor HTTP vanilla Node.js con rutas / y /about, base JSON y frontend",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "nodejs",
+    "vanilla",
+    "http",
+    "backend",
+    "json"
+  ],
+  "author": "Daniel Preisz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanyPreisz/hello-world-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DanyPreisz/hello-world-server/issues"
+  },
+  "homepage": "https://github.com/DanyPreisz/hello-world-server#readme"
+}

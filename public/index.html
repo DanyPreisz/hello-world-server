@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hello World · Vanilla HTTP</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <nav class="nav">
+        <div class="brand"><span class="dot"></span> hello-world-server</div>
+        <div class="links">
+          <a href="/" data-path>Inicio</a>
+          <a href="/about" data-path>About</a>
+        </div>
+      </nav>
+
+      <main class="hero">
+        <span class="eyebrow" id="eyebrow">Cargando</span>
+        <h1 id="headline">...</h1>
+        <p class="body" id="body"></p>
+        <div class="row">
+          <a class="btn" id="cta" href="/about">Ver /about</a>
+          <div class="meta" id="visits">leyendo JSON...</div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <b id="title">Hello World</b>
+            <span>Título guardado en data/pages.json</span>
+          </div>
+          <div class="card">
+            <b>Sin Express</b>
+            <span>Solo http, fs, path y URL nativos</span>
+          </div>
+          <div class="card">
+            <b>Frontend estático</b>
+            <span>HTML + CSS + JS servidos desde /public</span>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>

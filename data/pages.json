@@ -1,0 +1,24 @@
+{
+  "home": {
+    "slug": "/",
+    "title": "Hello World",
+    "eyebrow": "Vanilla Node.js",
+    "headline": "Un servidor HTTP sin frameworks",
+    "body": "Esta página se sirve desde un servidor escrito solo con módulos nativos de Node.js. El contenido vive en data/pages.json y cada visita queda registrada.",
+    "cta": "Ver /about",
+    "ctaHref": "/about",
+    "visits": 0,
+    "updatedAt": "2026-09-22T00:00:00.000Z"
+  },
+  "about": {
+    "slug": "/about",
+    "title": "About",
+    "eyebrow": "Qué hace este proyecto",
+    "headline": "Rutas, JSON y un frontend estático",
+    "body": "El servidor resuelve GET / y GET /about, incrementa un contador en el JSON y entrega HTML, CSS y JS desde /public. No usa Express ni ninguna dependencia npm.",
+    "cta": "Volver al inicio",
+    "ctaHref": "/",
+    "visits": 0,
+    "updatedAt": "2026-09-22T00:00:00.000Z"
+  }
+}
